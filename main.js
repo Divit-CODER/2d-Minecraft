@@ -65,30 +65,59 @@ function my_keydown(e){
         down();
     }
     if(keypressed=='87'){
-        new_image(wall.jpg);
+        new_image('wall.jpg');
     }
     if(keypressed=='71'){
-        new_image(ground.png);
+        new_image('ground.png');
     }
     if(keypressed=='76'){
-        new_image(light_green.png);
+        new_image('light_green.png');
     }
     if(keypressed=='84'){
-        new_image(trunkjpg);
+        new_image('trunk.jpg');
     }
     if(keypressed=='82'){
-        new_image(roof.jpg);
+        new_image('roof.jpg');
     }
     if(keypressed=='89'){
-        new_image(yellow_wall.png);
+        new_image('yellow_wall.png');
     }
     if(keypressed=='68'){
-        new_image(dark_green.png);
+        new_image('dark_green.png');
     }
     if(keypressed=='85'){
-        new_image(unique.png);
+        new_image('unique.png');
     }
     if(keypressed=='67'){
-        new_image(cloud.jpg);
+        new_image('cloud.jpg');
+    }
+}
+
+function up(){
+    if(player_y >=0){
+        player_y=player_y-block_image_height;
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+function down(){
+    if(player_y <=550){
+        player_y=player_y+block_image_height;
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+function left(){
+    if(player_x >=0){
+        player_x=player_x-block_image_width;
+        canvas.remove(player_object);
+        player_update();
+    }
+}
+function right(){
+    if(player_x <=940){
+        player_x=player_x+block_image_width;
+        canvas.remove(player_object);
+        player_update();
     }
 }
